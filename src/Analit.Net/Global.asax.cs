@@ -55,46 +55,50 @@ namespace Analit.Net
 		void Application_Error(object sender, EventArgs e)
 		{
 			var exception = Server.GetLastError();
-
-			var builder = new StringBuilder();
-			builder.AppendLine("----UrlReferer-------");
-			builder.AppendLine(Request.UrlReferrer != null ? Request.UrlReferrer.ToString() : String.Empty);
-			builder.AppendLine("----Url-------");
-			builder.AppendLine(Request.Url.ToString());
-			builder.AppendLine("--------------");
-			builder.AppendLine("----Params----");
-			foreach (string name in Request.QueryString)
-				builder.AppendLine(String.Format("{0}: {1}", name, Request.QueryString[name]));
-			builder.AppendLine("--------------");
-
-			builder.AppendLine("----Error-----");
-			do
+			if (!Request.Url.ToString().Contains("favicon.ico"))
 			{
-				builder.AppendLine("Message:");
-				builder.AppendLine(exception.Message);
-				builder.AppendLine("Stack Trace:");
-				builder.AppendLine(exception.StackTrace);
+
+				var builder = new StringBuilder();
+				builder.AppendLine("----UrlReferer-------");
+				builder.AppendLine(Request.UrlReferrer != null ? Request.UrlReferrer.ToString() : String.Empty);
+				builder.AppendLine("----Url-------");
+				builder.AppendLine(Request.Url.ToString());
 				builder.AppendLine("--------------");
-				exception = exception.InnerException;
-			} while (exception != null);
-			builder.AppendLine("--------------");
+				builder.AppendLine("----Params----");
+				foreach (string name in Request.QueryString)
+					builder.AppendLine(String.Format("{0}: {1}", name, Request.QueryString[name]));
+				builder.AppendLine("--------------");
 
-			builder.AppendLine("----Session---");
-			try
-			{
-				foreach (string key in Session.Keys)
+				builder.AppendLine("----Error-----");
+				do
 				{
-					if (Session[key] == null)
-						builder.AppendLine(String.Format("{0} - null", key));
-					else
-						builder.AppendLine(String.Format("{0} - {1}", key, Session[key]));
-				}
-			}
-			catch (Exception ex)
-			{ }
-			builder.AppendLine("--------------");
+					builder.AppendLine("Message:");
+					builder.AppendLine(exception.Message);
+					builder.AppendLine("Stack Trace:");
+					builder.AppendLine(exception.StackTrace);
+					builder.AppendLine("--------------");
+					exception = exception.InnerException;
+				} while (exception != null);
+				builder.AppendLine("--------------");
 
-			_log.Error(builder.ToString());
+				builder.AppendLine("----Session---");
+				try
+				{
+					foreach (string key in Session.Keys)
+					{
+						if (Session[key] == null)
+							builder.AppendLine(String.Format("{0} - null", key));
+						else
+							builder.AppendLine(String.Format("{0} - {1}", key, Session[key]));
+					}
+				}
+				catch (Exception ex)
+				{
+				}
+				builder.AppendLine("--------------");
+
+				_log.Error(builder.ToString());
+			}
 
 		}
 

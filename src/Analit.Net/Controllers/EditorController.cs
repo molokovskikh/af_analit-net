@@ -20,7 +20,6 @@ namespace Analit.Net.Controllers
 				return new List<string>{
 					"https://stat.analit.net/ci/auth/logon.aspx",
 					"http://www.analit.net/apteka",
-					"http://cert.analit.net/CertEnroll/acdcserv.adc.analit.net_!0421!043b!0443!0436!0431!0430%20!0441!0435!0440!0442!0438!0444!0438!043a!0430!0446!0438!0438%20!0410!041a%20!0022!0418!043d!0444!043e!0440!0443!043c!0022(1).crt"
 					//"Main/requisite"
 				};
 			}

@@ -49,6 +49,9 @@
 	});
 
 </script>
+<head>
+	<base href="${siteroot}/">
+</head> 
 <center>
 			<form method="post" action="${siteroot}/Main/Save">
 				<textarea id="htmlcode" name="htmlcode" rows="40" cols="80" style="width: 80%" class="tinymce">

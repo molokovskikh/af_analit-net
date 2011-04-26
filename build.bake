@@ -8,6 +8,7 @@ import file from Git.bake
 
 Global(
 	Project : "Analit.Net",
+	deployTo : """\\adc.analit.net\Inforoom\WebApps\Analit.Net""",
 	HumanReadableName : "Analit.Net"
 )
 

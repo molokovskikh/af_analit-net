@@ -169,12 +169,6 @@ namespace Analit.Net.Componets
 				}
 				foreach (var field in menuField.subMenu)
 				{
-					/*htmlCode += "<div class=\"delSubMenu\">";
-					htmlCode += "<Div class=\"leftDivSub\">";
-					htmlCode += "<Div class=\"upArrowSub\"></Div>";
-					htmlCode += "<Div class=\"downArrowSub\"></Div>";
-					htmlCode += "</Div>";
-					htmlCode += "<Div class=\"rightDiv\">";*/
 					htmlCode += beforSubContent;
 					var subIntem =
 						"<input type=text name=\"fieldName\" id=\"{1}\" value=\"{0}\" class=\"subitem\"/>";
@@ -182,22 +176,7 @@ namespace Analit.Net.Componets
 					htmlCode += GenerateSelectList("sl_" + field.Id, field.Link);
 					//htmlCode += string.Format(subIntem, field.Link, "sl_" + field.Id);
 					htmlCode += afterSubContent;
-					/*htmlCode += "<div class=\"delSubMenuItem\"> </div>";
-					htmlCode += " <br />";
-					htmlCode += "</div>";
-					htmlCode += "</div>";*/
 				}
-				/*ARSesssionHelper<SubMenuField>.QueryWithSession(session => {
-					foreach (var subMenuField in menuField.subMenu)
-																			{
-																				session.Evict(subMenuField);
-																			}
-																			return new List<SubMenuField>();
-				});*/
-				/*htmlCode += menuField.subMenu.Count > 0
-								? string.Format(
-								"<div class=\"{0}\"></div>", "appendDiv" + menuField.Id) : string.Empty;*/
-				//htmlCode += menuField.subMenu.Count > 0 ? "</div>" : string.Empty;
 				htmlCode += "</div>";
 				htmlCode += "</div>";
 				htmlCode += "</div>";

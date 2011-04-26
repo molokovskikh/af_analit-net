@@ -112,7 +112,6 @@
     </Compile>
     <Compile Include="Helpers\ActiveDirectoryHelper.cs" />
     <Compile Include="Helpers\ActiveRecordHelper.cs" />
-    <Compile Include="Models\AdminsPermissions.cs" />
     <Compile Include="Models\IVRNContent.cs" />
     <Compile Include="Models\MenuField.cs" />
     <Compile Include="Models\Permission.cs" />
@@ -139,7 +138,6 @@
     <None Include="Views\Layouts\TinyMCE.brail" />
     <None Include="Views\Login\LoginPage.brail" />
     <None Include="Views\Main\Dynamic.brail" />
-    <None Include="Views\Main\Index.brail" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
