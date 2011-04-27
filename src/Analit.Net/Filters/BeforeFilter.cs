@@ -27,6 +27,7 @@ namespace Analit.Net.Filters
 			if (context.Session["LoginPartner"] == null)
 			{ context.Session["LoginPartner"] = context.CurrentUser.Identity.Name; }
 			controllerContext.PropertyBag["AccessEditLink"] = Regionaladmin.IsAccessiblePartner(context.Session["LoginPartner"]);
+			controllerContext.PropertyBag["SiteAdress"] = context.ApplicationPath + "/";
 			return true;
 		}
 	}

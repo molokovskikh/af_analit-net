@@ -1,5 +1,4 @@
-﻿<base href="${siteroot}/">
-${Content}
+﻿${Content}
 <%if (AccessEditLink and ShowEditLink): %>
 <a href="${siteroot}/Content/${ViewName}?Edit=true"><b>Редактировать</b></a>
 <%end %>

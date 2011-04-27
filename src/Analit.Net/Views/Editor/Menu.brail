@@ -229,7 +229,7 @@
 		req.name = name;
 		req.link = link;
 		req.fieldType = fieldType;
-		$.post("Save", req, function (data) { alert(data); window.location.href = '../Editor/Menu'; });
+		$.post("Editor/Save", req, function (data) { alert(data); window.location.href = '../Editor/Menu'; });
 		/*$.post("Save", aElems, function() {
 			alert("Data Loaded: " + aElems.length);
 	});*/

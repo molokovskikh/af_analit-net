@@ -17,7 +17,8 @@ namespace Analit.Net.Componets
 			var htmlText = "<ul>";
 			foreach (var menuField in MenuField.FindAll())
 			{
-				htmlText += string.Format("<li class=\"bottom-line\"><a href=\"{0}\" id=\"{2}\">{1}</a></li>", EngineContext.ApplicationPath + "/" + menuField.Link,
+				var eng = menuField.Link.Contains("http") ? string.Empty : EngineContext.ApplicationPath + "/";
+				htmlText += string.Format("<li class=\"bottom-line\"><a href=\"{0}\" id=\"{2}\">{1}</a></li>", eng  + menuField.Link,
 					menuField.Name, Path.GetFileNameWithoutExtension(menuField.Link) + "1");
 			}
 			htmlText += "</ul>";
