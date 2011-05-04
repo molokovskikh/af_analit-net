@@ -55,6 +55,13 @@ namespace Analit.Net
 		void Application_Error(object sender, EventArgs e)
 		{
 			var exception = Server.GetLastError();
+
+			if (exception is ControllerNotFoundException
+			&& !Request.UrlReferrer.AbsolutePath.Contains("analit.net"))
+			{
+				return;
+			}
+
 			if (!Request.Url.ToString().Contains("favicon.ico"))
 			{
 
