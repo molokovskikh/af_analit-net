@@ -55,7 +55,7 @@
 		<!-- //Меню -->
 
 		<!-- Левая колонка// -->
-		<div class="left">
+		<div class="left" style="display:none;">
 			<!-- Кнопка // -->
 			<a href="${siteroot}/Main/HowPay" style="display:none" id="HowPay1" class="button-blue">Как оплатить?</a>
 			<!-- // Кнопка -->
