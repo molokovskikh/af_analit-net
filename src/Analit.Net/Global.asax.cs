@@ -56,8 +56,7 @@ namespace Analit.Net
 		{
 			var exception = Server.GetLastError();
 
-			if (exception is ControllerNotFoundException
-			&& !Request.UrlReferrer.AbsolutePath.Contains("analit.net"))
+            if (String.IsNullOrEmpty(Request.UrlReferrer.AbsolutePath))
 			{
 				return;
 			}
