@@ -7,8 +7,8 @@ using Castle.ActiveRecord.Framework;
 
 namespace Analit.Net.Models
 {
-	[ActiveRecord(Schema = "Analit", Table = "IVRNContent")]
-	public class IVRNContent : ActiveRecordLinqBase<IVRNContent>
+	[ActiveRecord(Schema = "Analit", Table = "SiteContent")]
+	public class SiteContent : ActiveRecordLinqBase<SiteContent>
 	{
 
 		[PrimaryKey]

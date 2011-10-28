@@ -1,0 +1,1 @@
+ALTER TABLE `analit`.`ivrncontent` RENAME TO `analit`.`SiteContent`;

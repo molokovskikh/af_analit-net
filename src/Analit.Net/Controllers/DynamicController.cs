@@ -14,7 +14,7 @@ namespace Analit.Net.Controllers
 		public object Execute(IEngineContext engineContext, IController controller, IControllerContext context)
 		{
 			var baseCtlr = (Controller)controller;
-			var content = IVRNContent.FindAllByProperty("ViewName", Path.GetFileNameWithoutExtension(context.SelectedViewName));
+			var content = SiteContent.FindAllByProperty("ViewName", Path.GetFileNameWithoutExtension(context.SelectedViewName));
 			context.PropertyBag["Content"] = content.Length > 0 ? content.First().Content : string.Empty;
 			if (Convert.ToBoolean(engineContext.Request.QueryString["Edit"]))
 			{
@@ -38,7 +38,7 @@ namespace Analit.Net.Controllers
 		public override void Contextualize(IEngineContext engineContext, IControllerContext context)
 		{
 			base.Contextualize(engineContext, context);
-			foreach (var ivrnContent in IVRNContent.FindAll())
+			foreach (var ivrnContent in SiteContent.FindAll())
 			{
 				DynamicActions[ivrnContent.ViewName] = new DynamicAction();
 			}

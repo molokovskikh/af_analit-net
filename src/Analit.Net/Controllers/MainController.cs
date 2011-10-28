@@ -17,9 +17,9 @@ namespace Analit.Net.Controllers
 			if (Regionaladmin.IsAccessiblePartner(Session["LoginPartner"]))
 			{
 				var htmlcode = Request.Form["htmlcode"];
-				var views = IVRNContent.FindAllByProperty("ViewName", localPath);
+				var views = SiteContent.FindAllByProperty("ViewName", localPath);
 				if (views.Length == 0)
-					new IVRNContent
+					new SiteContent
 					{
 						Content = htmlcode,
 						ViewName = localPath

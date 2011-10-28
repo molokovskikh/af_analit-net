@@ -49,14 +49,13 @@ namespace Analit.Net
 		void Application_End(object sender, EventArgs e)
 		{
 			//  Code that runs on application shutdown
-
 		}
 
 		void Application_Error(object sender, EventArgs e)
 		{
 			var exception = Server.GetLastError();
 
-            if (String.IsNullOrEmpty(Request.UrlReferrer.AbsolutePath))
+			if (String.IsNullOrEmpty(Request.UrlReferrer.AbsolutePath))
 			{
 				return;
 			}

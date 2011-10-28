@@ -33,7 +33,7 @@
 		skin_variant: "silver",
 
 		// Example content CSS (should be your site CSS)
-		content_css: "css/example.css",
+		content_css: "../css/main.css,../css/styles.css",
 
 		// Drop lists for link/image/media/template dialogs
 		template_external_list_url: "js/template_list.js",
@@ -49,15 +49,12 @@
 	});
 
 </script>
-<head>
-	<base href="${siteroot}/">
-</head> 
 <center>
-			<form method="post" action="${siteroot}/Main/Save">
-				<textarea id="htmlcode" name="htmlcode" rows="40" cols="80" style="width: 80%" class="tinymce">
-				${ChildOutput}
-				</textarea>
-				<input type="hidden" name="LocalPath" value="${LocalPath}" />
-				<button type="submit">Сохранить</button>
-			</form>
+<form method="post" action="${siteroot}/Main/Save">
+	<textarea id="htmlcode" name="htmlcode" rows="40" cols="80" style="width: 80%" class="tinymce">
+	${ChildOutput}
+	</textarea>
+	<input type="hidden" name="LocalPath" value="${LocalPath}" />
+	<button type="submit">Сохранить</button>
+</form>
 </center>

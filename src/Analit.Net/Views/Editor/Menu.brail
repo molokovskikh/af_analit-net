@@ -89,19 +89,10 @@
 		var idBlockName = $(clickDiv).parent().children('.mitem:first').attr('id');
 		var idBlock = idBlockName.split('_')[idBlockName.split('_').length - 1];
 		var nextIndex = $('#menus').children('#menuBlock_' + idBlock).children('.rightDiv').children('.subDiv').children('.delSubMenu').children('.rightDiv:first').children('.subitem').length / 2 + 1;
-		//$(clickDiv).parent().children('.subDiv').append('<div class="delSubMenu"> </div>');
+
 		var toDiv = $(clickDiv).parent().children('.subDiv').children('.delSubMenu:last');
 		$(clickDiv).parent().children('.subDiv').css("display", 'block');
-		/*(toDiv).append($('.subitem:last').clone().attr({
-			value: '',
-			id: 'sn_' + nextIndex,
-		}).css("display", 'inline-block'));
-		var SelectItem = $('.rightDiv:last').clone();
-		$(toDiv).append(SelectItem);
-		SelectItem.children("option[name='1']").attr('selected', 'selected')
-		SelectItem.children("option[value='Content']").attr('selected', 'selected')
-		$(toDiv).append('<div class="delSubMenuItem"> </div>');
-		$(toDiv).append('<br/>');*/
+
 		var addedSub = toDiv.clone().attr({
 			id: 'New' + nextIndex,
 		});
@@ -115,7 +106,7 @@
 		addedSub.children('.rightDiv').children('.linkSelector').children("option[name='1']").attr('selected', 'selected');
 		addedSub.children('.rightDiv').children('.linkSelector').children("option[value='Content']").attr('selected', 'selected');
 		
-		/*$(toDiv)*/addedSub.children('.rightDiv').children('.delSubMenuItem:last').click(function () {
+		addedSub.children('.rightDiv').children('.delSubMenuItem:last').click(function () {
 			delSubMenu(this);
 		});
 		AddEventArrow(addedSub.children('.leftDivSub').children('.upArrowSub'));
@@ -171,12 +162,7 @@
 			menuBlock.children('.rightDiv').children('.subDiv:first').children('.delSubMenu').attr({
 				id: nextBlockNum + '_0'
 			});
-			/*menuBlock.children('.linkSelector').attr({
-			value: '',
-			id: 'sl_' + (mainBlockCount + 1)
-			});*/
-		   /* menuBlock.children('.rightDiv').children('.subDiv').children('.delSubMenu').remove();
-			menuBlock.children('.rightDiv').children('.subDiv').children('br').remove();*/
+
 			menuBlock.children('.rightDiv').children('.addSubMenuItem').click(function () {
 				addSubMenu(this);
 			});
@@ -212,12 +198,12 @@
 		var link = new Array();
 		$('.menuBlock').each(function () {
 			var mainBlock = $(this);
-			//var inData = { fieldType: "main", name: fieldName, link: fieldlink, id: $(this).attr('id') };
+
 			id.push($(this).attr('id'));
 			fieldType.push("main");
 			name.push($(this).children('.rightDiv').children('.mitem:first').val());
 			link.push($(this).children('.rightDiv').children('.linkSelector:last').val());
-			//aElems.push(inData);
+
 			$(this).children('.rightDiv').children('.subDiv').children('.delSubMenu:visible').children('.rightDiv').each(function () {
 				id.push(mainBlock.attr('id').split('_')[mainBlock.attr('id').split('_').length - 1]);
 				fieldType.push("sub");
@@ -229,17 +215,12 @@
 		req.name = name;
 		req.link = link;
 		req.fieldType = fieldType;
-		$.post("Editor/Save", req, function (data) { alert(data); window.location.href = '../Editor/Menu'; });
-		/*$.post("Save", aElems, function() {
-			alert("Data Loaded: " + aElems.length);
-	});*/
+		$.post("../Editor/Save", req, function (data) { alert(data); window.location.href = '../Editor/Menu'; });
 	}
 </script>
 
 <button id="addMenuBut" >Добавить новый пункт меню</button>
 <div id="menus">
-				<% 
-	component EditMenuList, {}
-%>
+	<% 	component EditMenuList, {} %>
 </div>
 <button id="Save" onclick="Save()">Сохранить</button>
