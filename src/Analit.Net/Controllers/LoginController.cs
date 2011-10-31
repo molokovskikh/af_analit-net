@@ -13,20 +13,18 @@ using log4net;
 namespace Analit.Net.Controllers
 {
 	[Layout("Main")]
-	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
+	[FilterAttribute(ExecuteWhen.BeforeAction, typeof (BeforeFilter))]
 	public class LoginController : SmartDispatcherController
 	{
-		private static readonly ILog _log = LogManager.GetLogger(typeof(LoginController));
+		private static readonly ILog _log = LogManager.GetLogger(typeof (LoginController));
 
 		public void LoginPage(bool partner)
 		{
 			if (!partner)
 				PropertyBag["AcceptName"] = "AcceptClient";
-			else
-			{
+			else {
 				if (Regionaladmin.IsAccessiblePartner(Session["LoginPartner"]))
 					Redirecter.RedirectRoot(Context, this);
-				//RedirectToSiteRoot();
 				PropertyBag["AcceptName"] = "AcceptPartner";
 			}
 		}
@@ -34,16 +32,13 @@ namespace Analit.Net.Controllers
 		[AccessibleThrough(Verb.Post)]
 		public void AcceptPartner(string Login, string Password)
 		{
-			if (ActiveDirectoryHelper.IsAuthenticated(Login, Password))
-			{
+			if (ActiveDirectoryHelper.IsAuthenticated(Login, Password)) {
 				_log.Info("Авторизация выполнена");
 				FormsAuthentication.RedirectFromLoginPage(Login, true);
 				Session["LoginPartner"] = Login;
-				//RedirectToSiteRoot();
 				Redirecter.RedirectRoot(Context, this);
 			}
-			else
-			{
+			else {
 				_log.Info("Авторизация отклонена");
 				RedirectToUrl(@"..//Login/LoginPage?partner=true");
 			}

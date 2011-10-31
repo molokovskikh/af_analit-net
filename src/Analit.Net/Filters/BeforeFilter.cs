@@ -22,6 +22,8 @@ namespace Analit.Net.Filters
 		public bool Perform(ExecuteWhen exec, IEngineContext context, IController controller,
 		                    IControllerContext controllerContext)
 		{
+			if (context.Session["LoginPartner"] == null)
+				return false;
 			if (!Regionaladmin.IsAccessiblePartner(context.Session["LoginPartner"]))
 				Redirecter.RedirectRoot(context, (Controller) controller);
 			else {
