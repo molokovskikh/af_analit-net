@@ -17,6 +17,20 @@ namespace Analit.Net.Filters
 		}
 	}
 
+	public class LoginFilter : IFilter
+	{
+		public bool Perform(ExecuteWhen exec, IEngineContext context, IController controller,
+		                    IControllerContext controllerContext)
+		{
+			if (!Regionaladmin.IsAccessiblePartner(context.Session["LoginPartner"]))
+				Redirecter.RedirectRoot(context, (Controller) controller);
+			else {
+				return true;
+			}
+			return false;
+		}
+	}
+
 
 	public class BeforeFilter : IFilter
 	{

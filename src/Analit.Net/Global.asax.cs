@@ -16,23 +16,31 @@ using Castle.MonoRail.Framework.Internal;
 using Castle.MonoRail.Framework.Routing;
 using Castle.MonoRail.Framework.Services;
 using Castle.MonoRail.Views.Brail;
+using Common.Web.Ui.Helpers;
 using log4net;
 using log4net.Config;
 
 namespace Analit.Net
 {
-	public class Global : HttpApplication, IMonoRailConfigurationEvents, IMonoRailContainerEvents
+	public class Global : WebApplication, IMonoRailConfigurationEvents, IMonoRailContainerEvents
 	{
 		private static readonly ILog _log = LogManager.GetLogger(typeof(Global));
+
+		public Global()
+			: base(Assembly.Load("Analit.Net"))
+		{
+			LibAssemblies.Add(Assembly.Load("Common.Web.Ui"));
+			Logger.ErrorSubject = "Ошибка в Analit.Net";
+			Logger.SmtpHost = "box.analit.net";
+		}
 
 		void Application_Start(object sender, EventArgs e)
 		{
 			try
 			{
 				XmlConfigurator.Configure();
-				// Code that runs on application startup
-				ActiveRecordStarter.Initialize(
-						Assembly.Load("Analit.Net"),
+				ActiveRecordStarter.Initialize( new Assembly[] {
+						Assembly.Load("Analit.Net"), Assembly.Load("Common.Web.Ui")},
 						ActiveRecordSectionHandler.Instance);
 
 				RoutingModuleEx.Engine.Add(new PatternRoute("/")
@@ -51,7 +59,7 @@ namespace Analit.Net
 			//  Code that runs on application shutdown
 		}
 
-		void Application_Error(object sender, EventArgs e)
+		/*void Application_Error(object sender, EventArgs e)
 		{
 			var exception = Server.GetLastError();
 
@@ -105,7 +113,7 @@ namespace Analit.Net
 				_log.Error(builder.ToString());
 			}
 
-		}
+		}*/
 
 		void Session_Start(object sender, EventArgs e)
 		{
@@ -116,9 +124,10 @@ namespace Analit.Net
 		public void Configure(IMonoRailConfiguration configuration)
 		{
 			configuration.ControllersConfig.AddAssembly("Analit.Net");
-			configuration.ViewComponentsConfig.Assemblies = new[] { "Analit.Net" };
+			configuration.ViewComponentsConfig.Assemblies = new[] {"InforoomInternet", "Common.Web.Ui"};
 			configuration.ViewEngineConfig.ViewPathRoot = "Views";
 			configuration.UrlConfig.UseExtensions = false;
+			configuration.ViewEngineConfig.AssemblySources.Add(new AssemblySourceInfo("Common.Web.Ui", "Common.Web.Ui.Views"));
 			configuration.ViewEngineConfig.ViewEngines.Add(new ViewEngineInfo(typeof(BooViewEngine), false));
 			configuration.ViewEngineConfig.VirtualPathRoot = configuration.ViewEngineConfig.ViewPathRoot;
 			configuration.ViewEngineConfig.ViewPathRoot = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, configuration.ViewEngineConfig.ViewPathRoot);
@@ -127,10 +136,10 @@ namespace Analit.Net
 		public void Created(IMonoRailContainer container)
 		{ }
 
-		public void Initialized(IMonoRailContainer container)
+		/*public void Initialized(IMonoRailContainer container)
 		{
 			((DefaultViewComponentFactory)container.GetService<IViewComponentFactory>()).Inspect(Assembly.Load("Analit.Net"));
-		}
+		}*/
 
 		void Session_End(object sender, EventArgs e)
 		{
