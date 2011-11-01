@@ -209,6 +209,11 @@ color: #f00; /* ÷вет активной ссылки */
   line-height: 10px;
 }
 
+#content
+{
+	min-height: 220px;
+}
+
 #content span.adres {
   color: #939393;
   font-size: 9px;
@@ -654,7 +659,7 @@ color: #f00; /* ÷вет активной ссылки */
 /* Ћинии */
 .line-home-left {
   margin-right: -10px;
-  margin-top: 20px;
+ /* margin-top: 20px;*/
   margin-bottom: 0px;
 }
 
@@ -663,6 +668,13 @@ color: #f00; /* ÷вет активной ссылки */
   margin-top: 64px;
   margin-bottom: 0px;
 }
+
+.whereLine
+{
+	width: 155px;
+	height: 20px;
+}
+
 
 *:first-child+html .line-home-right {
   margin-top: 84px; /* ƒл€ ие7 */
