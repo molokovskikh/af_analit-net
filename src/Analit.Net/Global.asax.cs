@@ -30,7 +30,7 @@ namespace Analit.Net
 			: base(Assembly.Load("Analit.Net"))
 		{
 			LibAssemblies.Add(Assembly.Load("Common.Web.Ui"));
-			Logger.ErrorSubject = "Ошибка в Analit.Net";
+			Logger.ErrorSubject = "Ошибка в AnalitNet";
 			Logger.SmtpHost = "box.analit.net";
 			Logger.ExcludeExceptionTypes.Add(typeof(ControllerNotFoundException));
 		}

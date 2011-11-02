@@ -9,7 +9,6 @@ using Common.Web.Ui.Controllers;
 
 namespace Analit.Net.Controllers
 {
-	//[FilterAttribute(ExecuteWhen.BeforeAction, typeof(LoginFilter))]
 	[FilterAttribute(ExecuteWhen.BeforeAction, typeof (BeforeFilter))]
 	public class ContentController : BaseContentController
 	{
