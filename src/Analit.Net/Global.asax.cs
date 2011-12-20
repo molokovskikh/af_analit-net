@@ -33,6 +33,7 @@ namespace Analit.Net
 			Logger.ErrorSubject = "Ошибка в AnalitNet";
 			Logger.SmtpHost = "box.analit.net";
 			Logger.ExcludeExceptionTypes.Add(typeof(ControllerNotFoundException));
+			Logger.ExcludeExceptionTypes.Add(typeof(FileNotFoundException));
 		}
 
 		void Application_Start(object sender, EventArgs e)
