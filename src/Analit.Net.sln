@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Tools", "Common.Tool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoRail.Debugger.Toolbar", "..\lib\MonoRail.Debugger.Toolbar\src\MonoRail.Debugger.Toolbar\MonoRail.Debugger.Toolbar.csproj", "{BF858A13-1FE7-42F0-AF78-D9909FA193D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web.Ui.Test", "Common.Web.UI\Common.Web.Ui.Test\Common.Web.Ui.Test.csproj", "{D3BA9766-79FD-4DC9-9A44-B847C6625E0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,12 @@ Global
 		{BF858A13-1FE7-42F0-AF78-D9909FA193D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF858A13-1FE7-42F0-AF78-D9909FA193D1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BF858A13-1FE7-42F0-AF78-D9909FA193D1}.Release|x86.ActiveCfg = Release|Any CPU
+		{D3BA9766-79FD-4DC9-9A44-B847C6625E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3BA9766-79FD-4DC9-9A44-B847C6625E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3BA9766-79FD-4DC9-9A44-B847C6625E0A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D3BA9766-79FD-4DC9-9A44-B847C6625E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3BA9766-79FD-4DC9-9A44-B847C6625E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3BA9766-79FD-4DC9-9A44-B847C6625E0A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
