@@ -29,6 +29,7 @@ namespace Analit.Net
 		public Global()
 			: base(Assembly.Load("Analit.Net"))
 		{
+			Logger = new HttpSessionLog(typeof(Global));
 			LibAssemblies.Add(Assembly.Load("Common.Web.Ui"));
 			Logger.ErrorSubject = "Ошибка в AnalitNet";
 			Logger.SmtpHost = "box.analit.net";
