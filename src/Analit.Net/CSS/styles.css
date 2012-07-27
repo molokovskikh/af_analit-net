@@ -334,6 +334,7 @@ color: #f00; /* Цвет активной ссылки */
   position: absolute;
   right: -20px;
   bottom: 20px;
+  display: none;
 }
 
 /* Телефон */
