@@ -1,7 +1,3 @@
-ALTER TABLE `analit`.`menufield` ADD COLUMN `Hint` VARCHAR(45) NOT NULL AFTER `Link`;
+ALTER TABLE `analit`.`menufield` ADD COLUMN `Hint` VARCHAR(45) AFTER `Link`;
 
-ALTER TABLE `internet`.`menufield` ADD COLUMN `Hint` VARCHAR(45) NOT NULL AFTER `Link`;
-
-ALTER TABLE `analit`.`menufield` MODIFY COLUMN `Hint` VARCHAR(45) CHARACTER SET cp1251 COLLATE cp1251_general_ci DEFAULT NULL;
-
-ALTER TABLE `internet`.`menufield` MODIFY COLUMN `Hint` VARCHAR(45) CHARACTER SET cp1251 COLLATE cp1251_general_ci DEFAULT NULL;
+ALTER TABLE `internet`.`menufield` ADD COLUMN `Hint` VARCHAR(45) AFTER `Link`;
