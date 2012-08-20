@@ -11,7 +11,7 @@ using Common.Web.Ui.Controllers;
 namespace Analit.Net.Controllers
 {
 	[Layout("Main")]
-	[FilterAttribute(ExecuteWhen.BeforeAction, typeof (BeforeFilter))]
+	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
 	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(LoginFilter))]
 	public class EditorController : BaseEditorController
 	{

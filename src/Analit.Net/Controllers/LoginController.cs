@@ -13,10 +13,10 @@ using log4net;
 namespace Analit.Net.Controllers
 {
 	[Layout("Main")]
-	[FilterAttribute(ExecuteWhen.BeforeAction, typeof (BeforeFilter))]
+	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
 	public class LoginController : SmartDispatcherController
 	{
-		private static readonly ILog _log = LogManager.GetLogger(typeof (LoginController));
+		private static readonly ILog _log = LogManager.GetLogger(typeof(LoginController));
 
 		public void LoginPage(bool partner)
 		{

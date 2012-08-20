@@ -9,7 +9,7 @@ using Castle.MonoRail.Framework;
 namespace Analit.Net.Models
 {
 	[ActiveRecord(Schema = "accessright", Table = "Permissions", Lazy = true)]
-	public class Permission : ActiveRecordLinqBase<Permission>  
+	public class Permission : ActiveRecordLinqBase<Permission>
 	{
 		[PrimaryKey]
 		public virtual uint Id { get; set; }
@@ -22,6 +22,5 @@ namespace Analit.Net.Models
 
 		[Property]
 		public virtual string Shortcut { get; set; }
-
 	}
 }

@@ -11,9 +11,9 @@ namespace Analit.Net.Helpers
 	public class ActiveDirectoryHelper
 	{
 		private static readonly ILog _log = LogManager.GetLogger(typeof(ActiveDirectoryHelper));
-		static DirectoryEntry entryAu;
-		static string _path;
-		static string _filterAttribute;
+		private static DirectoryEntry entryAu;
+		private static string _path;
+		private static string _filterAttribute;
 		public static string ErrorMessage;
 
 
@@ -28,14 +28,12 @@ namespace Analit.Net.Helpers
 
 		public static bool Authenticated(string LDAP, string username, string pwd)
 		{
-
 			var domainAndUsername = @"analit\" + username;
 			entryAu = new DirectoryEntry(LDAP, domainAndUsername, pwd, AuthenticationTypes.None);
 #if DEBUG
-			//Console.WriteLine(entryAu.Guid);
+	//Console.WriteLine(entryAu.Guid);
 #endif
-			try
-			{
+			try {
 				// Bind to the native AdsObject to force authentication.
 				var obj = entryAu.NativeObject;
 				var search = new DirectorySearcher(entryAu);
@@ -46,8 +44,7 @@ namespace Analit.Net.Helpers
 				_path = result.Path;
 				_filterAttribute = (String)result.Properties["cn"][0];
 			}
-			catch (Exception ex)
-			{
+			catch (Exception ex) {
 				_log.Info("Пароль или логин был введен неправильно");
 				_log.Info(ErrorMessage);
 				ErrorMessage = ex.Message;

@@ -20,12 +20,12 @@ namespace Analit.Net.Filters
 	public class LoginFilter : IFilter
 	{
 		public bool Perform(ExecuteWhen exec, IEngineContext context, IController controller,
-		                    IControllerContext controllerContext)
+			IControllerContext controllerContext)
 		{
 			if (context.Session["LoginPartner"] == null)
 				return false;
 			if (!Regionaladmin.IsAccessiblePartner(context.Session["LoginPartner"]))
-				Redirecter.RedirectRoot(context, (Controller) controller);
+				Redirecter.RedirectRoot(context, (Controller)controller);
 			else {
 				return true;
 			}
@@ -40,8 +40,9 @@ namespace Analit.Net.Filters
 		{
 			controllerContext.PropertyBag["ViewName"] = Path.GetFileNameWithoutExtension(context.Request.Uri.Segments.Last());
 			controllerContext.PropertyBag["LocalPath"] = Path.GetFileNameWithoutExtension(context.Request.Uri.LocalPath);
-			if (context.Session["LoginPartner"] == null)
-			{ context.Session["LoginPartner"] = context.CurrentUser.Identity.Name; }
+			if (context.Session["LoginPartner"] == null) {
+				context.Session["LoginPartner"] = context.CurrentUser.Identity.Name;
+			}
 			controllerContext.PropertyBag["AccessEditLink"] = Regionaladmin.IsAccessiblePartner(context.Session["LoginPartner"]);
 			controllerContext.PropertyBag["SiteAdress"] = context.ApplicationPath + "/";
 			return true;

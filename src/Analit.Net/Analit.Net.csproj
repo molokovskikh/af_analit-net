@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\ProjectLib.properties" Condition="Exists('..\ProjectLib.properties')" />
-  <PropertyGroup>
+	<ItemGroup>
+		<StyleCopAdditionalAddinPaths Include="..\..\lib\StyleCop">
+			<InProject>false</InProject>
+		</StyleCopAdditionalAddinPaths>
+	</ItemGroup>
+	<PropertyGroup>
+		<StyleCopTreatErrorsAsWarnings>False</StyleCopTreatErrorsAsWarnings>
+		<StyleCopOverrideSettingsFile>..\..\lib\StyleCop\Settings.StyleCop</StyleCopOverrideSettingsFile>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
@@ -90,9 +97,6 @@
     <Content Include="CSS\styles.css" />
     <Content Include="robots.txt" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -124,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
@@ -166,4 +171,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+	<Import Project="..\..\packages\StyleCop.MSBuild.4.7.35.0\tools\StyleCop.Targets" />
 </Project>

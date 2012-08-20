@@ -43,9 +43,8 @@ namespace Analit.Net.Models
 		public static bool IsAccessiblePartner(object userName)
 		{
 			var admin = Queryable.Where(q => q.UserName == userName.ToString()).ToList();
-			if (admin.Count != 0)
-			{
-				if (admin.First().Permissions.Select(p=>p.Shortcut).Contains("RCA"))
+			if (admin.Count != 0) {
+				if (admin.First().Permissions.Select(p => p.Shortcut).Contains("RCA"))
 					return true;
 			}
 			return false;

@@ -13,14 +13,12 @@ namespace Analit.Net.Helpers
 		{
 			var sessionHolder = ActiveRecordMediator.GetSessionFactoryHolder();
 			var session = sessionHolder.CreateSession(typeof(T));
-			try
-			{
+			try {
 				var _result = result(session);
 				foreach (var item in _result)
 					session.Evict(item);
 			}
-			finally
-			{
+			finally {
 				sessionHolder.ReleaseSession(session);
 			}
 		}
