@@ -1,0 +1,9 @@
+\lib\MonoRail.Debugger.Toolbar\src\MonoRail.Debugger.Toolbar\Toolbar.brail
+\output\Analit.Net\Views\Layouts\Main.brail
+\src\Analit.Net\Views\Layouts\Main.brail
+\src\Common.Web.UI\Common.Web.Ui\Views\Components\ContactEditor\default.brail
+\src\Common.Web.UI\Common.Web.Ui\Views\Contact\EditContactGroup.brail
+\src\Common.Web.UI\Common.Web.Ui\Views\Contact\EditPersonSubView.brail
+\src\Common.Web.UI\Common.Web.Ui\Views\Documents\ShowDocumentDetails.brail
+\src\Common.Web.UI\Common.Web.Ui\Views\Editor\Menu.brail
+\src\Common.Web.UI\Common.Web.Ui\Views\Layouts\TinyMCE.brail
