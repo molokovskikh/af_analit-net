@@ -16,7 +16,6 @@ namespace Analit.Net.Helpers
 		private static string _filterAttribute;
 		public static string ErrorMessage;
 
-
 		public static bool IsAuthenticated(string username, string pwd)
 		{
 			if (Authenticated(@"LDAP://OU=Офис,DC=adc,DC=analit,DC=net", username, pwd))
