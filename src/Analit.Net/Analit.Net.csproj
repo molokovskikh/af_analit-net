@@ -8,6 +8,10 @@
     </FileUpgradeFlags>
     <OldToolsVersion>4.0</OldToolsVersion>
     <UpgradeBackupLocation />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <Import Project="..\ProjectLib.properties" Condition="Exists('..\ProjectLib.properties')" />
   <ItemGroup>
@@ -104,6 +108,7 @@
   <ItemGroup>
     <Content Include="CSS\main.css" />
     <Content Include="CSS\styles.css" />
+    <Content Include="Assets\Stylesheets\Table.css" />
     <Content Include="robots.txt" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -174,12 +179,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
-  </Target>
-  -->
+  </Target>-->
   <Import Project="..\..\packages\StyleCop.MSBuild.4.7.35.0\tools\StyleCop.Targets" />
 </Project>

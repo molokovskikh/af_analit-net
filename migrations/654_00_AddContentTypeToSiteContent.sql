@@ -1,0 +1,1 @@
+ALTER TABLE `analit`.`sitecontent` ADD COLUMN `ContentType` INTEGER UNSIGNED NOT NULL DEFAULT 0 AFTER `ViewName`;

@@ -6,10 +6,13 @@ using Analit.Net.Filters;
 using Analit.Net.Models;
 using Castle.MonoRail.Framework;
 using Common.Web.Ui.Controllers;
+using Common.Web.Ui.Helpers;
 
 namespace Analit.Net.Controllers
 {
 	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
+	[Helper(typeof(AppHelperWeb), "app")]
+	[Helper(typeof(ViewHelper))]
 	public class ContentController : BaseContentController
 	{
 		public override bool IsAcces()
