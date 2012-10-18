@@ -8,11 +8,13 @@ using Analit.Net.Models;
 using Castle.MonoRail.Framework;
 using Common.Web.Ui.Controllers;
 
+
 namespace Analit.Net.Controllers
 {
 	[Layout("Main")]
 	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
 	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(LoginFilter))]
+	[Helper(typeof(AppHelper), "app")]
 	public class EditorController : BaseEditorController
 	{
 		public override IEnumerable<string> SpecialLinks

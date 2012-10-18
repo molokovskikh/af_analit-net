@@ -697,3 +697,7 @@ br.noheight {
   height: 0px;
   line-height: 0px;
 }
+
+.freeWikiSelect {
+	width: 250px;
+}
