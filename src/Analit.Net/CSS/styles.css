@@ -698,6 +698,10 @@ br.noheight {
   line-height: 0px;
 }
 
-.freeWikiSelect {
-	width: 250px;
+.nodisplay {
+	display: none;
+}
+
+.filterField {
+	width: 240px;
 }
