@@ -64,11 +64,9 @@ namespace Analit.Net.Controllers
 		{
 			if(CheckEscape(source) && _isEscape) {
 				if(isLine)
-					_resultBuilder.AppendLine(source.Replace("<", "&lt;")
-						.Replace(">", "&gt;"));
+					_resultBuilder.AppendLine(HttpUtility.HtmlEncode(source));
 				else
-					_resultBuilder.Append(source.Replace("<", "&lt;")
-						.Replace(">", "&gt;"));
+					_resultBuilder.Append(HttpUtility.HtmlEncode(source));
 			}
 			else {
 				_resultBuilder.Append(source);
