@@ -36,14 +36,20 @@ namespace Analit.Net.Filters
 
 	public class BeforeFilter : IFilter
 	{
-		public bool Perform(ExecuteWhen exec, IEngineContext context, IController controller, IControllerContext controllerContext)
+		public bool Perform(ExecuteWhen exec,
+			IEngineContext context,
+			IController controller,
+			IControllerContext controllerContext)
 		{
-			controllerContext.PropertyBag["ViewName"] = Path.GetFileNameWithoutExtension(context.Request.Uri.Segments.Last());
-			controllerContext.PropertyBag["LocalPath"] = Path.GetFileNameWithoutExtension(context.Request.Uri.LocalPath);
+			controllerContext.PropertyBag["ViewName"] =
+				Path.GetFileNameWithoutExtension(context.Request.Uri.Segments.Last());
+			controllerContext.PropertyBag["LocalPath"] =
+				Path.GetFileNameWithoutExtension(context.Request.Uri.LocalPath);
 			if (context.Session["LoginPartner"] == null) {
 				context.Session["LoginPartner"] = context.CurrentUser.Identity.Name;
 			}
-			controllerContext.PropertyBag["AccessEditLink"] = Regionaladmin.IsAccessiblePartner(context.Session["LoginPartner"]);
+			controllerContext.PropertyBag["AccessEditLink"] =
+				Regionaladmin.IsAccessiblePartner(context.Session["LoginPartner"]);
 			controllerContext.PropertyBag["SiteAdress"] = context.ApplicationPath + "/";
 			return true;
 		}
