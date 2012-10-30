@@ -79,15 +79,16 @@ namespace Analit.Net.Controllers
 
 		private bool CheckEscape(string source)
 		{
+			var result = true;
 			if(source.ToLower().Contains("<pre>")) {
 				_isEscape = true;
-				return false;
+				result = false;
 			}
 			if(source.ToLower().Contains("</pre>")) {
 				_isEscape = false;
-				return false;
+				result = false;
 			}
-			return true;
+			return result;
 		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analit.Net", "Analit.Net\Analit.Net.csproj", "{EC578DD1-D0E5-4810-B636-A1DEEE7246C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web.Ui", "Common.Web.UI\Common.Web.Ui\Common.Web.Ui.csproj", "{95E2C313-46FA-4B4B-9EFF-3228662908F4}"
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web.Ui.Test", "Common.Web.UI\Common.Web.Ui.Test\Common.Web.Ui.Test.csproj", "{D3BA9766-79FD-4DC9-9A44-B847C6625E0A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.MySql", "Common.MySql\Common.MySql\Common.MySql.csproj", "{8A680813-C83B-497A-85E6-E8F07B7D7650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analit.Net.Test", "Analit.Net.Test\Analit.Net.Test.csproj", "{F040F40D-2302-4DDC-8F0E-1EC1CCB2826F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,12 @@ Global
 		{8A680813-C83B-497A-85E6-E8F07B7D7650}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A680813-C83B-497A-85E6-E8F07B7D7650}.Release|x86.ActiveCfg = Release|x86
 		{8A680813-C83B-497A-85E6-E8F07B7D7650}.Release|x86.Build.0 = Release|x86
+		{F040F40D-2302-4DDC-8F0E-1EC1CCB2826F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F040F40D-2302-4DDC-8F0E-1EC1CCB2826F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F040F40D-2302-4DDC-8F0E-1EC1CCB2826F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F040F40D-2302-4DDC-8F0E-1EC1CCB2826F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F040F40D-2302-4DDC-8F0E-1EC1CCB2826F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F040F40D-2302-4DDC-8F0E-1EC1CCB2826F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
