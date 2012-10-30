@@ -15,13 +15,10 @@
   </PropertyGroup>
   <Import Project="..\ProjectLib.properties" Condition="Exists('..\ProjectLib.properties')" />
   <ItemGroup>
-    
-      
-    
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>
-    
-    
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
@@ -113,6 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\JavaScripts\Main.js" />
     <Content Include="CSS\main.css" />
     <Content Include="CSS\styles.css" />
     <Content Include="Assets\Stylesheets\Table.css" />
@@ -148,16 +146,16 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\mysite.pubxml" />
+    <EmbeddedResource Include="Views\Content\GetContactPhones.brail">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="Views\Layouts\Main.brail" />
     <None Include="Views\Login\LoginPage.brail" />
   </ItemGroup>
@@ -167,7 +165,17 @@
       <Name>Common.Web.Ui</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><Import Project="..\..\packages\StyleCop.MSBuild.4.7.35.0\tools\StyleCop.Targets" /><PropertyGroup><StyleCopTreatErrorsAsWarnings>False</StyleCopTreatErrorsAsWarnings><StyleCopOverrideSettingsFile>..\..\packages\StyleCopAddOn.1.0.4\Settings.StyleCop</StyleCopOverrideSettingsFile></PropertyGroup><ItemGroup><StyleCopAdditionalAddinPaths Include="..\..\packages\StyleCopAddOn.1.0.4\lib\4.0"><InProject>false</InProject></StyleCopAdditionalAddinPaths></ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\StyleCop.MSBuild.4.7.35.0\tools\StyleCop.Targets" />
+  <PropertyGroup>
+    <StyleCopTreatErrorsAsWarnings>False</StyleCopTreatErrorsAsWarnings>
+    <StyleCopOverrideSettingsFile>..\..\packages\StyleCopAddOn.1.0.4\Settings.StyleCop</StyleCopOverrideSettingsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <StyleCopAdditionalAddinPaths Include="..\..\packages\StyleCopAddOn.1.0.4\lib\4.0">
+      <InProject>false</InProject>
+    </StyleCopAdditionalAddinPaths>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
@@ -195,5 +203,4 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>-->
-  
 </Project>

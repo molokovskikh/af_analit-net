@@ -1,0 +1,5 @@
+﻿<p>
+<% for i, item in enumerate(contactRegions): %>
+${item.Name} ${item.DefaultPhone} <br />
+<% end %>
+</p>

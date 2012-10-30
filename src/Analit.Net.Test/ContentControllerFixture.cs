@@ -7,6 +7,9 @@ using Analit.Net.Controllers;
 using Castle.ActiveRecord;
 using Castle.ActiveRecord.Framework.Config;
 using Castle.MonoRail.TestSupport;
+using Common.Web.Ui.Models;
+using NHibernate;
+using NHibernate.Linq;
 using NUnit.Framework;
 
 namespace Analit.Net.Tests
@@ -15,6 +18,7 @@ namespace Analit.Net.Tests
 	public class ContentControllerFixture : BaseControllerTest
 	{
 		private ContentController _controller;
+		private ISession _session;
 		[SetUp]
 		public void SetUp()
 		{
@@ -25,8 +29,23 @@ namespace Analit.Net.Tests
 					},
 					ActiveRecordSectionHandler.Instance);
 			}
+
+			var holder = ActiveRecordMediator.GetSessionFactoryHolder();
+			_session = holder.CreateSession(typeof(ActiveRecordBase));
+
 			_controller = new ContentController();
+			_controller.DbSession = _session;
 			PrepareController(_controller);
+		}
+
+		[TearDown]
+		public void TearDown()
+		{
+			if (_session != null) {
+				var holder = ActiveRecordMediator.GetSessionFactoryHolder();
+				holder.ReleaseSession(_session);
+				_session = null;
+			}
 		}
 
 		[Test]
@@ -43,6 +62,23 @@ namespace Analit.Net.Tests
 			Assert.That(result.Contains("&lt;p&gt;экранированный текст&lt;/p&gt;"));
 			Assert.That(result.Contains("&amp;"));
 			Assert.That(result.Contains("<h1>"));
+		}
+
+		[Test]
+		public void GetRegionsTest()
+		{
+			var region = _session.Query<Region>().FirstOrDefault(r => r.Id == 1);
+			var tmpPhone = region.DefaultPhone;
+			region.DefaultPhone = "111-111";
+			_session.Save(region);
+			_controller.GetContactPhones();
+			Assert.That(_controller.PropertyBag.Contains("contactRegions"));
+			var result = _controller.PropertyBag["contactRegions"] as List<Region>;
+			Assert.That(result, Is.Not.Null);
+			Assert.That(result.Count(r => r.Id == 1 && r.DefaultPhone == "111-111") == 1);
+			// возвращаем как было
+			region.DefaultPhone = tmpPhone;
+			_session.Save(region);
 		}
 	}
 }
