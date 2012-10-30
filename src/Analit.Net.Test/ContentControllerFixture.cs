@@ -71,6 +71,7 @@ namespace Analit.Net.Tests
 			var tmpPhone = region.DefaultPhone;
 			region.DefaultPhone = "111-111";
 			_session.Save(region);
+			_session.Flush();
 			_controller.GetContactPhones();
 			Assert.That(_controller.PropertyBag.Contains("contactRegions"));
 			var result = _controller.PropertyBag["contactRegions"] as List<Region>;
