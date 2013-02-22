@@ -11,6 +11,8 @@
 </head>
 ${app.Asset("Main.js")}
 <body>
+${app.Asset("YandexMetrik.js")}
+<noscript><div><img src="//mc.yandex.ru/watch/20220766" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <div id="wrapper">
 	<div class="left">
 		<a href="#" id="logo">&nbsp;</a>

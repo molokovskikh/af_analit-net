@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\JavaScripts\Main.js" />
+    <Content Include="Assets\JavaScripts\YandexMetrik.js" />
     <Content Include="CSS\main.css" />
     <Content Include="CSS\styles.css" />
     <Content Include="Assets\Stylesheets\Table.css" />
