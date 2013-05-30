@@ -13,3 +13,4 @@ UpgradeLog.XML
 UpgradeLog.htm
 _UpgradeReport_Files/
 *.Cache
+src/*.properties
