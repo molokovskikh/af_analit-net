@@ -14,10 +14,7 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <Import Project="..\ProjectLib.properties" Condition="Exists('..\ProjectLib.properties')" />
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -134,7 +131,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ActiveDirectoryHelper.cs" />
-    <Compile Include="Helpers\ActiveRecordHelper.cs" />
     <Compile Include="Helpers\AppHelper.cs" />
     <Compile Include="Models\Permission.cs" />
     <Compile Include="Models\Regionaladmin.cs" />
