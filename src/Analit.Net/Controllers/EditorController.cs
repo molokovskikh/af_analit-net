@@ -7,6 +7,8 @@ using Analit.Net.Helpers;
 using Analit.Net.Models;
 using Castle.MonoRail.Framework;
 using Common.Web.Ui.Controllers;
+using Common.Web.Ui.Models;
+using NHibernate.Linq;
 
 
 namespace Analit.Net.Controllers
@@ -17,6 +19,14 @@ namespace Analit.Net.Controllers
 	[Helper(typeof(AppHelper), "app")]
 	public class EditorController : BaseEditorController
 	{
+		public EditorController()
+		{
+			BeforeAction += (action, context1, controller, controllerContext) => {
+				var regions = DbSession.Query<Region>().Where(r => r.DefaultPhone != null && r.DefaultPhone != "").OrderBy(r => r.Name).ToList();
+				PropertyBag["contactRegions"] = regions;
+			};
+		}
+
 		public override IEnumerable<string> SpecialLinks
 		{
 			get

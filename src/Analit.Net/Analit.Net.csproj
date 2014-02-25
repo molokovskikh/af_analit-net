@@ -107,8 +107,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\JavaScripts\Main.js" />
-    <Content Include="Assets\JavaScripts\YandexMetrik.js" />
     <Content Include="CSS\main.css" />
     <Content Include="CSS\styles.css" />
     <Content Include="Assets\Stylesheets\Table.css" />
@@ -135,26 +133,14 @@
     <Compile Include="Models\Permission.cs" />
     <Compile Include="Models\Regionaladmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Site.Master" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\mysite.pubxml" />
-    <EmbeddedResource Include="Views\Content\GetContactPhones.brail">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <None Include="Views\Layouts\Main.brail" />
     <None Include="Views\Login\LoginPage.brail" />
+    <None Include="Web.test.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Web.UI\Common.Web.Ui\Common.Web.Ui.csproj">

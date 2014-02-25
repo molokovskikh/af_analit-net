@@ -9,12 +9,16 @@ import file from Db.bake
 
 Global(
 	Project : "Analit.Net",
-	deployTo : """\\adc.analit.net\Inforoom\WebApps\Analit.Net""",
 	HumanReadableName : "Analit.Net"
 )
 
-task @default, [@Build]
+task @default, [@build]
 
-task @Build, [@BuildWebSite]
+task @build:
+	CleanWeb(Globals, "Analit.Net")
+	BuildWeb(Globals, "Analit.Net")
 
-Task @deploy, [@CheckScmChanges, @Production, @Build, @Migrate, @Backup, @WebDeploy, @SendDeployNotification]
+task "deploy:app":
+	XCopyDeploy(Globals, "Analit.Net")
+
+Task @deploy, ["deploy:pipeline"]

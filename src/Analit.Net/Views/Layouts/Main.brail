@@ -1,18 +1,12 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
+<html>
 <head>
 	<title>Инфорум</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<script type="text/javascript" src="../JavaScript/jquery-1.4.2.min.js"></script>
 	<link rel="stylesheet" href="${siteroot}/CSS/styles.css" type="text/css" />
 </head>
-${app.Asset("Main.js")}
 <body>
-${app.Asset("YandexMetrik.js")}
-<noscript><div><img src="//mc.yandex.ru/watch/20220766" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <div id="wrapper">
 	<div class="left">
 		<a href="#" id="logo">&nbsp;</a>
@@ -60,9 +54,12 @@ ${app.Asset("YandexMetrik.js")}
 				<h3>Контакты</h3>
 				<p>Воронеж,<br />ул.Студенческая, 12а<br /><br />
 				<span id="contactPhones">
-				<p>
-
-</p></span>
+					<p>
+						<% for i, item in enumerate(contactRegions): %>
+						${item.Name} ${item.DefaultPhone} <br />
+						<% end %>
+					</p>
+				</span>
 				Почта: <a id="mail_link" title="адрес службы поддержки пользователей" href="mailto:office@analit.net">office@analit.net</a>
 				</p>
 			</div>

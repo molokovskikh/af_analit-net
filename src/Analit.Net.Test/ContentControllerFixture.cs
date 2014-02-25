@@ -72,7 +72,7 @@ namespace Analit.Net.Tests
 			region.DefaultPhone = "111-111";
 			_session.Save(region);
 			_session.Flush();
-			_controller.GetContactPhones();
+			//_controller.GetContactPhones();
 			Assert.That(_controller.PropertyBag.Contains("contactRegions"));
 			var result = _controller.PropertyBag["contactRegions"] as List<Region>;
 			Assert.That(result, Is.Not.Null);

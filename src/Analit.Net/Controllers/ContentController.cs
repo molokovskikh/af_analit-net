@@ -21,6 +21,14 @@ namespace Analit.Net.Controllers
 	[Helper(typeof(ViewHelper))]
 	public class ContentController : BaseContentController
 	{
+		public ContentController()
+		{
+			BeforeAction += (action, context1, controller, controllerContext) => {
+				var regions = DbSession.Query<Region>().Where(r => r.DefaultPhone != null && r.DefaultPhone != "").OrderBy(r => r.Name).ToList();
+				PropertyBag["contactRegions"] = regions;
+			};
+		}
+
 		public override bool IsAcces()
 		{
 			if (Session["LoginPartner"] != null)
@@ -33,13 +41,6 @@ namespace Analit.Net.Controllers
 			var output = new EscapeOutputter();
 			TextileFormatter.FormatString(source, output);
 			return output.Result;
-		}
-
-		public void GetContactPhones()
-		{
-			var regions = DbSession.Query<Region>().Where(r => r.DefaultPhone != null && r.DefaultPhone != "").OrderBy(r => r.Name).ToList();
-			PropertyBag["contactRegions"] = regions;
-			CancelLayout();
 		}
 	}
 

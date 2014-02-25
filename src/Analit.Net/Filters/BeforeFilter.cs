@@ -6,6 +6,7 @@ using System.Web;
 using Analit.Net.Models;
 using Castle.ActiveRecord;
 using Castle.MonoRail.Framework;
+using Common.Web.Ui.Models;
 
 namespace Analit.Net.Filters
 {
