@@ -129,7 +129,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ActiveDirectoryHelper.cs" />
-    <Compile Include="Helpers\AppHelper.cs" />
     <Compile Include="Models\Permission.cs" />
     <Compile Include="Models\Regionaladmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

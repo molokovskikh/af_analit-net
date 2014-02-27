@@ -9,23 +9,21 @@ using Castle.MonoRail.Framework;
 using Common.Web.Ui.Controllers;
 using Common.Web.Ui.Helpers;
 using Common.Web.Ui.Models;
+using NHibernate;
 using NHibernate.Linq;
 using Textile;
 using Textile.Blocks;
-using AppHelper = Analit.Net.Helpers.AppHelper;
 
 namespace Analit.Net.Controllers
 {
-	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
-	[Helper(typeof(AppHelper), "app")]
+	[Filter(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
 	[Helper(typeof(ViewHelper))]
 	public class ContentController : BaseContentController
 	{
 		public ContentController()
 		{
 			BeforeAction += (action, context1, controller, controllerContext) => {
-				var regions = DbSession.Query<Region>().Where(r => r.DefaultPhone != null && r.DefaultPhone != "").OrderBy(r => r.Name).ToList();
-				PropertyBag["contactRegions"] = regions;
+				PrepareAction(this, DbSession);
 			};
 		}
 
@@ -41,6 +39,19 @@ namespace Analit.Net.Controllers
 			var output = new EscapeOutputter();
 			TextileFormatter.FormatString(source, output);
 			return output.Result;
+		}
+
+		public static void PrepareAction(Controller controller, ISession session)
+		{
+			controller.PropertyBag["contactRegions"] = session.Query<Region>()
+				.Where(r => r.DefaultPhone != null && r.DefaultPhone != "")
+				.OrderBy(r => r.Name)
+				.ToList()
+				.Select(r => new Region {
+					Name = r.Name,
+					DefaultPhone = r.DefaultPhone == "800-5554688" ? "499-7097350" : r.DefaultPhone,
+				})
+				.ToList();
 		}
 	}
 
