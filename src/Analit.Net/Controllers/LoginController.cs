@@ -8,14 +8,22 @@ using Analit.Net.Filters;
 using Analit.Net.Helpers;
 using Analit.Net.Models;
 using Castle.MonoRail.Framework;
+using Common.Web.Ui.Controllers;
 using log4net;
 
 namespace Analit.Net.Controllers
 {
 	[Layout("Main")]
 	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
-	public class LoginController : SmartDispatcherController
+	public class LoginController : BaseController
 	{
+		public LoginController()
+		{
+			BeforeAction += (action, context1, controller, controllerContext) => {
+				ContentController.PrepareAction(this, DbSession);
+			};
+		}
+
 		public void LoginPage(bool partner)
 		{
 			if (!partner)
