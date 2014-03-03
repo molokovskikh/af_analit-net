@@ -48,6 +48,7 @@ namespace Analit.Net.Controllers
 				.OrderBy(r => r.Name)
 				.ToList()
 				.Select(r => new Region {
+					Id = r.Id,
 					Name = r.Name,
 					DefaultPhone = r.DefaultPhone == "800-5554688" ? "499-7097350" : r.DefaultPhone,
 				})
