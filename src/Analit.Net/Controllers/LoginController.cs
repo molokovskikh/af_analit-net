@@ -4,16 +4,18 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 using Analit.Net.Filters;
 using Analit.Net.Helpers;
 using Analit.Net.Models;
 using Castle.MonoRail.Framework;
+using Common.Tools;
 using Common.Web.Ui.Controllers;
 using log4net;
+using NHibernate.Linq;
 
 namespace Analit.Net.Controllers
 {
-	[Layout("Main")]
 	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
 	public class LoginController : BaseController
 	{
@@ -24,29 +26,24 @@ namespace Analit.Net.Controllers
 			};
 		}
 
-		public void LoginPage(bool partner)
+		public void Index(string login, string password)
 		{
-			if (!partner)
-				PropertyBag["AcceptName"] = "AcceptClient";
-			else {
-				if (Regionaladmin.IsAccessiblePartner(Session["LoginPartner"]))
-					Redirecter.RedirectRoot(Context, this);
-				PropertyBag["AcceptName"] = "AcceptPartner";
-			}
-		}
-
-		[AccessibleThrough(Verb.Post)]
-		public void AcceptPartner(string Login, string Password)
-		{
-			if (ActiveDirectoryHelper.IsAuthenticated(Login, Password)) {
-				Logger.Info("Авторизация выполнена");
-				FormsAuthentication.RedirectFromLoginPage(Login, true);
-				Session["LoginPartner"] = Login;
-				Redirecter.RedirectRoot(Context, this);
-			}
-			else {
+			var id = Session["AdminId"];
+			if (id != null)
+				RedirectToSiteRoot();
+			if (IsPost) {
+				if (ActiveDirectoryHelper.IsAuthenticated(login, password)) {
+					var admin = DbSession.Query<Admin>().First(a => a.UserName == login);
+					if (admin != null && admin.Permissions.Any(p => p.Shortcut.Match("RCA"))) {
+						Session["AdminId"] = admin.Id;
+						FormsAuthentication.RedirectFromLoginPage(login, true);
+						RedirectToSiteRoot();
+						return;
+					}
+				}
 				Logger.Info("Авторизация отклонена");
-				RedirectToUrl(@"..//Login/LoginPage?partner=true");
+				Error("Не верное имя пользователя или пароль");
+				RedirectToAction("Index");
 			}
 		}
 	}

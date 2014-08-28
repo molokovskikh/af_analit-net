@@ -14,9 +14,8 @@ using NHibernate.Linq;
 
 namespace Analit.Net.Controllers
 {
-	[Layout("Main")]
-	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter))]
-	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(LoginFilter))]
+	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(BeforeFilter), ExecutionOrder = 0)]
+	[FilterAttribute(ExecuteWhen.BeforeAction, typeof(LoginFilter), ExecutionOrder = 1)]
 	public class EditorController : BaseEditorController
 	{
 		public EditorController()

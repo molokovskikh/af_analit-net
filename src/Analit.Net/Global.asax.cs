@@ -47,6 +47,8 @@ namespace Analit.Net
 				RoutingModuleEx.Engine.Add(new PatternRoute("/")
 					.DefaultForController().Is("Content")
 					.DefaultForAction().Is("Программа"));
+				RoutingModuleEx.Engine.Add(new PatternRoute("/<controller>/[action]")
+					.DefaultForAction().Is("Index"));
 			}
 			catch (Exception ex) {
 				Log.Fatal("Ошибка при запуске страницы.", ex);

@@ -29,9 +29,7 @@ namespace Analit.Net.Controllers
 
 		public override bool IsAcces()
 		{
-			if (Session["LoginPartner"] != null)
-				return Regionaladmin.IsAccessiblePartner(Session["LoginPartner"]);
-			return false;
+			return Session["Admin"] != null;
 		}
 
 		public override string MarkUpToHTML(string source)
