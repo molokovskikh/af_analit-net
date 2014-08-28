@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Analit.Net.Controllers;
-using Castle.ActiveRecord;
-using Castle.ActiveRecord.Framework.Config;
 using Common.Web.Ui.Models;
 using Common.Web.Ui.Test.Controllers;
 using NHibernate.Linq;
@@ -20,14 +17,6 @@ namespace Analit.Net.Test
 		[SetUp]
 		public void SetUp()
 		{
-			if (!ActiveRecordStarter.IsInitialized) {
-				ActiveRecordStarter.Initialize(
-					new[] { Assembly.Load("Analit.Net"),
-						Assembly.Load("Common.Web.UI")
-					},
-					ActiveRecordSectionHandler.Instance);
-			}
-
 			_controller = new ContentController();
 			Prepare(_controller);
 		}
