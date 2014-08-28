@@ -95,6 +95,10 @@
       <Project>{72AFCFE8-C9E9-45FA-9698-BEE896A517A3}</Project>
       <Name>Common.Tools</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Web.UI\Common.Web.Ui.Test\Common.Web.Ui.Test.csproj">
+      <Project>{D3BA9766-79FD-4DC9-9A44-B847C6625E0A}</Project>
+      <Name>Common.Web.Ui.Test</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Web.UI\Common.Web.Ui\Common.Web.Ui.csproj">
       <Project>{95e2c313-46fa-4b4b-9eff-3228662908f4}</Project>
       <Name>Common.Web.Ui</Name>
