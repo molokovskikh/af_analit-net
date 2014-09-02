@@ -1,25 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 using Castle.ActiveRecord;
 using Castle.ActiveRecord.Framework.Config;
 using Castle.MonoRail.Framework;
-using Castle.MonoRail.Framework.Configuration;
-using Castle.MonoRail.Framework.Container;
-using Castle.MonoRail.Framework.Internal;
 using Castle.MonoRail.Framework.Routing;
-using Castle.MonoRail.Framework.Services;
-using Castle.MonoRail.Views.Brail;
 using Common.Web.Ui.Helpers;
 using Common.Web.Ui.MonoRailExtentions;
-using log4net;
-using log4net.Config;
 
 namespace Analit.Net
 {
