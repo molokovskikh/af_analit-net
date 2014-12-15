@@ -16,9 +16,7 @@ a {
   color: #4d7da2;
 }
 
-#mail_link:link {
-    color: #0000d0; /* Цвет ссылок */
-   }
+
 #mail_link:visited {
     color: #900060; /* Цвет посещенных ссылок */
    }
@@ -339,11 +337,13 @@ color: #f00; /* Цвет активной ссылки */
 
 /* Телефон */
 #phone {
-  text-align: center;
-  font-size: 26px;
-  color: White;
-  margin-bottom: 20px;
+text-align: left;
+font-size: 19px;
+color: White;
+padding-top: 13px;
+margin-bottom: 20px;
 }
+#phone a { color: white;}
 
 #phone small {
   font-size: 18px;
