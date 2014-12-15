@@ -61,8 +61,6 @@
 			<!-- Контакты // -->
 			<div id="contacts">
 				<h3>Контакты</h3>
-				<br />
-				<br />
 				<span id="contactPhones">
 					<p>
 						<% for i, item in enumerate(contactRegions): %>
