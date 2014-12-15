@@ -51,15 +51,18 @@
 
 			<!-- Телефон // -->
 			<div id="phone">
-				<small>473</small><br />
-				<span>260-60-00</span>
+				<div>Телефон:</div>
+				<div>8-800-555-46-88</div>
+				<div>E-mail:</div>
+				<div><a id="mail_link" title="адрес службы поддержки пользователей" href="mailto:office@analit.net">office@analit.net</a></div>
 			</div>
 			<!-- // Телефон -->
 
 			<!-- Контакты // -->
 			<div id="contacts">
 				<h3>Контакты</h3>
-				<p>Воронеж,<br />ул.Студенческая, 12а<br /><br />
+				<br />
+				<br />
 				<span id="contactPhones">
 					<p>
 						<% for i, item in enumerate(contactRegions): %>
@@ -67,7 +70,6 @@
 						<% end %>
 					</p>
 				</span>
-				Почта: <a id="mail_link" title="адрес службы поддержки пользователей" href="mailto:office@analit.net">office@analit.net</a>
 				</p>
 			</div>
 			<!-- // Контакты -->
