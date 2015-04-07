@@ -33,7 +33,7 @@ namespace Analit.Net.Controllers
 				RedirectToSiteRoot();
 			if (IsPost) {
 				if (ActiveDirectoryHelper.IsAuthenticated(login, password)) {
-					var admin = DbSession.Query<Admin>().First(a => a.UserName == login);
+					var admin = DbSession.Query<Admin>().FirstOrDefault(a => a.UserName == login);
 					if (admin != null && admin.Permissions.Any(p => p.Shortcut.Match("RCA"))) {
 						Session["AdminId"] = admin.Id;
 						FormsAuthentication.RedirectFromLoginPage(login, true);
