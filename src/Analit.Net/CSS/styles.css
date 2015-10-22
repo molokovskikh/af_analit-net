@@ -1,4 +1,4 @@
-/* Основные элементы */
+/* РћСЃРЅРѕРІРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ */
 body {
   background: White url(../Content/Layouts/wrapper.png) repeat-x top;
   color: Black;
@@ -18,11 +18,11 @@ a {
 
 
 #mail_link:visited {
-    color: #900060; /* Цвет посещенных ссылок */
+    color: #900060; /* Р¦РІРµС‚ РїРѕСЃРµС‰РµРЅРЅС‹С… СЃСЃС‹Р»РѕРє */
    }
 #mail_link:active {
-color: #f00; /* Цвет активной ссылки */ 
-   } 
+color: #f00; /* Р¦РІРµС‚ Р°РєС‚РёРІРЅРѕР№ СЃСЃС‹Р»РєРё */
+   }
 
 
 .center {
@@ -40,29 +40,29 @@ color: #f00; /* Цвет активной ссылки */
   float: right;
 }
 
-/* Обёртка */
+/* РћР±С‘СЂС‚РєР° */
 #wrapper {
   width: 975px;
   margin: 0px auto;
 }
 
-/* Логотип */
+/* Р›РѕРіРѕС‚РёРї */
 #logo {
   background: url(../Content/Layouts/logo.png) no-repeat top center;
   display: block;
-  width: 151px;
+  width: 148px;
   height: 42px;
   margin-left: 10px;
   margin-top: 20px;
 }
 
-/* Шапка */
+/* РЁР°РїРєР° */
 #header {
   height: 95px;
   background: url(../Content/Layouts/header-banner.jpg) no-repeat center top;
 }
 
-/* Значки навигации */
+/* Р—РЅР°С‡РєРё РЅР°РІРёРіР°С†РёРё */
 #icons a {
   display: block;
   width: 16px;
@@ -88,7 +88,7 @@ color: #f00; /* Цвет активной ссылки */
   background: url(../Content/Layouts/login.png) no-repeat center;
 }
 
-/* Главное меню */
+/* Р“Р»Р°РІРЅРѕРµ РјРµРЅСЋ */
 #menu {
   background: #4d7da2 url(../Content/Layouts/menu-bottom.png) repeat-x center bottom;
   width: 650px;
@@ -135,7 +135,7 @@ color: #f00; /* Цвет активной ссылки */
 }
 
 #menu a.one-line {
-  line-height: 28px; /* Если текст помещается на одной строке */
+  line-height: 28px; /* Р•СЃР»Рё С‚РµРєСЃС‚ РїРѕРјРµС‰Р°РµС‚СЃСЏ РЅР° РѕРґРЅРѕР№ СЃС‚СЂРѕРєРµ */
 }
 
 #menu a.menu-item {
@@ -170,7 +170,7 @@ color: #f00; /* Цвет активной ссылки */
 }
 
 *:first-child+html #menu ul.sub {
-  height: 31px; /* Для ие7 */
+  height: 31px; /* Р”Р»СЏ РёРµ7 */
 }
 
 #menu ul.sub a {
@@ -181,7 +181,7 @@ color: #f00; /* Цвет активной ссылки */
   color: #DA6700;
 }
 
-/* Контейнер */
+/* РљРѕРЅС‚РµР№РЅРµСЂ */
 #container {
   background: #4d7da2 url(../Content/Layouts/container-top.png) no-repeat top center;
   padding: 10px 10px 0px;
@@ -256,7 +256,7 @@ color: #f00; /* Цвет активной ссылки */
 
 #content tr.caption td.right {
   background: #4d7da2 url(../Content/Layouts/td-right.png) no-repeat top right;
-  /*width: 90%;*/   
+  /*width: 90%;*/
   float:none;
 }
 
@@ -276,7 +276,7 @@ color: #f00; /* Цвет активной ссылки */
   padding-left: 10px;
 }
 
-/* Подвал */
+/* РџРѕРґРІР°Р» */
 #footer {
   background: #4e80a7 url(../Content/Layouts/footer.png) no-repeat top center;
   margin-top: 10px;
@@ -335,7 +335,7 @@ color: #f00; /* Цвет активной ссылки */
   display: none;
 }
 
-/* Телефон */
+/* РўРµР»РµС„РѕРЅ */
 #phone {
 text-align: left;
 font-size: 19px;
@@ -352,10 +352,10 @@ margin-bottom: 20px;
   padding-left: 20px;
 }
 
-/* Новости */
+/* РќРѕРІРѕСЃС‚Рё */
 #news {
   background: url(../Content/Layouts/news.png) no-repeat 20px top;
-  display:none; /* ВЫКЛЮЧАТЕЛЬ НОВОСТЕЙ */
+  display:none; /* Р’Р«РљР›Р®Р§РђРўР•Р›Р¬ РќРћР’РћРЎРўР•Р™ */
 }
 
 #news .news-border {
@@ -415,7 +415,7 @@ margin-bottom: 20px;
   clear: both;
 }
 
-/* Контакты */
+/* РљРѕРЅС‚Р°РєС‚С‹ */
 #contacts {
   color: White;
   font-size: 11px;
@@ -431,7 +431,7 @@ margin-bottom: 20px;
   margin-bottom: 5px;
 }
 
-/* Голосование */
+/* Р“РѕР»РѕСЃРѕРІР°РЅРёРµ */
 #poll {
   background: #F5F5F5 url(../Content/Layouts/poll.png) no-repeat bottom center;
 }
@@ -460,7 +460,7 @@ margin-bottom: 20px;
 }
 
 *:first-child+html #poll input.radio {
-  height: 12px; /* Для ие7 */
+  height: 12px; /* Р”Р»СЏ РёРµ7 */
 }
 
 #poll label {
@@ -468,7 +468,7 @@ margin-bottom: 20px;
 }
 
 *:first-child+html #poll label {
-  font-size: 11px; /* Для ие7 */
+  font-size: 11px; /* Р”Р»СЏ РёРµ7 */
 }
 
 #poll input.button {
@@ -492,7 +492,7 @@ margin-bottom: 20px;
   text-align: center;
 }
 
-/* Тест */
+/* РўРµСЃС‚ */
 #test {
   background: url(../Content/Layouts/test.png) no-repeat top center;
   margin-top: 20px;
@@ -523,7 +523,7 @@ margin-bottom: 20px;
   text-decoration: underline;
 }
 
-/* Кнопки */
+/* РљРЅРѕРїРєРё */
 .button-orange, .button-blue {
   font-size: 18px;
   text-decoration: none;
@@ -547,7 +547,7 @@ margin-bottom: 20px;
   margin-right: 10px;
 }
 
-/* Баннер в правой колонке */
+/* Р‘Р°РЅРЅРµСЂ РІ РїСЂР°РІРѕР№ РєРѕР»РѕРЅРєРµ */
 #mini-banner a {
   background: url(../Content/Layouts/mini-banner.jpg) no-repeat center top;
   height: 122px;
@@ -556,7 +556,7 @@ margin-bottom: 20px;
   text-decoration: none;
 }
 
-/* Баннер в правой колонке */
+/* Р‘Р°РЅРЅРµСЂ РІ РїСЂР°РІРѕР№ РєРѕР»РѕРЅРєРµ */
 #banner-right a {
   background: url(../Content/Layouts/banner-right.jpg) no-repeat center top;
   height: 266px;
@@ -565,7 +565,7 @@ margin-bottom: 20px;
   text-decoration: none;
 }
 
-/* Баннер в левой колонке */
+/* Р‘Р°РЅРЅРµСЂ РІ Р»РµРІРѕР№ РєРѕР»РѕРЅРєРµ */
 #banner-left a {
   background: url(../Content/Layouts/banner-left.jpg) no-repeat center top;
   height: 266px;
@@ -574,7 +574,7 @@ margin-bottom: 20px;
   text-decoration: none;
 }
 
-/* Баннеры на главной внизу */
+/* Р‘Р°РЅРЅРµСЂС‹ РЅР° РіР»Р°РІРЅРѕР№ РІРЅРёР·Сѓ */
 .bottom-banner1 {
   background: url(../Content/Layouts/bottom-banner1.jpg) no-repeat left top;
   float: left;
@@ -593,7 +593,7 @@ margin-bottom: 20px;
   display: block;
 }
 
-/* Навигация */
+/* РќР°РІРёРіР°С†РёСЏ */
 .nav {
   margin: 0px 30px;
   height: 100px;
@@ -628,12 +628,12 @@ margin-bottom: 20px;
 
 }
 
-/* Поиск */
+/* РџРѕРёСЃРє */
 #search {
   background: #FFFFFF url(../Content/Layouts/search.png) no-repeat top center;
   height: 17px;
   margin-top: 30px;
-  display:none; /* ВЫКЛЮЧАТЕЛЬ ПОИСКА*/
+  display:none; /* Р’Р«РљР›Р®Р§РђРўР•Р›Р¬ РџРћРРЎРљРђ*/
 }
 
 #search input {
@@ -657,7 +657,7 @@ margin-bottom: 20px;
   cursor: pointer;
 }
 
-/* Линии */
+/* Р›РёРЅРёРё */
 .line-home-left {
   margin-right: -10px;
  /* margin-top: 20px;*/
@@ -678,7 +678,7 @@ margin-bottom: 20px;
 
 
 *:first-child+html .line-home-right {
-  margin-top: 84px; /* Для ие7 */
+  margin-top: 84px; /* Р”Р»СЏ РёРµ7 */
 }
 
 .line-left {

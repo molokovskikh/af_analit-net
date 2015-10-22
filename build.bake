@@ -1,4 +1,3 @@
-
 Global(
 	Project : "Analit.Net",
 	HumanReadableName : "Analit.Net"
@@ -6,11 +5,11 @@ Global(
 
 task @default, [@build]
 
-task @build:
+task @build, ["packages:install", "packages:fix", "assembly:info:generate"]:
 	CleanWeb(Globals, "Analit.Net")
 	BuildWeb(Globals, "Analit.Net")
 
-task "deploy:app":
+task "deploy:app", [@build]:
 	XCopyDeploy(Globals, "Analit.Net")
 
-Task @deploy, ["deploy:pipeline"]
+task @deploy, ["deploy:pipeline"]

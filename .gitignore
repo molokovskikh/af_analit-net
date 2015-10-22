@@ -7,12 +7,10 @@ obj
 _ReShar*/
 *.log
 packages/
-
 .cashe
 UpgradeLog.XML
 UpgradeLog.htm
 _UpgradeReport_Files/
 *.Cache
-src/*.properties
-
 *.gen.*
+.vs

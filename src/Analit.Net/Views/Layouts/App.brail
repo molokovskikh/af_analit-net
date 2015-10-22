@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Инфорум</title>
+	<title>АналитФармация</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="${siteroot}/CSS/styles.css" type="text/css" />
 	${app.Asset("jquery.js")}
@@ -16,7 +16,7 @@
 <body>
 <div id="wrapper">
 	<div class="left">
-		<a href="#" id="logo">&nbsp;</a>
+		<a href="#" id="logo"></a>
 	</div>
 	<div class="right">
 		<div id="icons">
@@ -106,7 +106,7 @@
 		</div>
 		<div class="left">
 		<!-- Левая колонка -->
-		ИНФОРУМ, 2011
+		АналитФармация, 2011
 		</div>
 		<div class="right">
 		<!-- Правая колонка -->
